@@ -3,69 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sindhu | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Sindhu | Cloud & DevOps Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Poppins',sans-serif;background:#000;color:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',sans-serif;background:#eef5f4;color:#0f172a}
 
 /* Navbar */
-.nav{display:flex;justify-content:center;gap:40px;padding:20px;background:#111;position:fixed;width:100%;z-index:10}
-.nav a{color:#aaa;text-decoration:none}
-.nav a:hover{color:#fff}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:#ffffff;box-shadow:0 2px 10px rgba(0,0,0,0.05);position:sticky;top:0;z-index:100}
+.logo{font-weight:700;font-size:22px;color:#0f766e}
+.nav a{margin:0 12px;text-decoration:none;color:#334155;font-size:14px}
+.nav .btn{background:#0f766e;color:#fff;padding:10px 18px;border-radius:20px}
 
-/* Hero Section */
-.hero{display:flex;align-items:center;justify-content:space-between;padding:120px 10%}
-.left{max-width:500px}
-.left h1{font-size:3rem;margin-bottom:10px}
-.left p{color:#aaa;margin-bottom:20px}
-.btn{background:#22c55e;padding:15px 25px;border-radius:8px;color:#fff;text-decoration:none;display:inline-block}
-.btn:hover{background:#16a34a}
+/* Hero */
+.hero{display:flex;align-items:center;justify-content:space-between;padding:80px 8%;background:linear-gradient(135deg,#e6f4f1,#cdeae5)}
+.hero-text{max-width:500px}
+.hero-text h1{font-size:36px;margin-bottom:10px}
+.hero-text span{color:#0f766e}
+.hero-text p{color:#475569;margin-bottom:20px;font-size:14px}
+.hero-buttons a{margin-right:10px;text-decoration:none;padding:10px 18px;border-radius:20px;font-size:14px}
+.btn-primary{background:#0f766e;color:#fff}
+.btn-secondary{background:#e2e8f0;color:#0f172a}
 
-.right img{width:300px;height:300px;border-radius:50%;object-fit:cover}
+.hero-img{position:relative}
+.hero-img img{width:260px;height:260px;border-radius:50%;object-fit:cover;border:8px solid #fff}
+.circle{position:absolute;top:-20px;left:-20px;width:300px;height:300px;border-radius:50%;border:2px dashed #0f766e;z-index:-1}
 
-/* Companies */
-.companies{padding:50px 10%;text-align:center}
-.logos{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:20px}
-.logo{border:1px solid #222;padding:15px 30px;border-radius:10px;color:#777}
+/* Sections */
+.section{padding:70px 8%}
+.title{font-size:24px;margin-bottom:20px;color:#0f766e}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.05)}
 
-/* Responsive */
+/* Skills */
+.skill{margin:10px 0}
+.bar{height:8px;background:#e2e8f0;border-radius:10px;overflow:hidden}
+.bar span{display:block;height:100%;background:#0f766e}
+
+/* Footer */
+.footer{text-align:center;padding:30px;color:#64748b}
+
 @media(max-width:768px){
 .hero{flex-direction:column;text-align:center}
-.right{margin-top:30px}
+.hero-img{margin-top:30px}
 }
 </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <div class="nav">
-<a href="#">Home</a>
-<a href="#">Experience</a>
-<a href="#">Projects</a>
-<a href="#">Contact</a>
+<div class="logo">Sindhu</div>
+<div>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact" class="btn">Let's Talk</a>
+</div>
 </div>
 
+<!-- Hero -->
 <section class="hero">
-<div class="left">
-<h1>Sindhu T</h1>
-<p>Cloud & Production Support Engineer with 4+ years of experience in AWS, Linux, SQL and DevOps. I specialize in monitoring, incident management, and building reliable cloud systems.</p>
-<a href="#" class="btn">Let's Get Started ></a>
+<div class="hero-text">
+<h1>Hey! I am <br><span>Cloud & DevOps Engineer</span></h1>
+<p>Cloud & Production Support Engineer with 4+ years of experience in AWS, Linux, SQL, and DevOps. Specialized in monitoring, incident management, and high-availability systems.</p>
+<div class="hero-buttons">
+<a href="#about" class="btn-primary">Learn More</a>
+<a href="#contact" class="btn-secondary">Hire Me</a>
+</div>
 </div>
 
-<div class="right">
-<img src="https://via.placeholder.com/300" alt="profile">
+<div class="hero-img">
+<div class="circle"></div>
+<img src="" alt="profile">
 </div>
 </section>
 
-<section class="companies">
-<p>Worked with</p>
-<div class="logos">
-<div class="logo">AWS</div>
-<div class="logo">Linux</div>
-<div class="logo">CloudWatch</div>
-<div class="logo">Ansible</div>
-<div class="logo">MySQL</div>
+<!-- About -->
+<section id="about" class="section">
+<h2 class="title">About Me</h2>
+<p>Experienced Cloud & Production Support Engineer working on AWS-based IoT and SaaS platforms. Strong expertise in Linux troubleshooting, CloudWatch monitoring, IAM, CI/CD pipelines, and incident management including P1/P2 issues.</p>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="section">
+<h2 class="title">Experience</h2>
+<div class="grid">
+<div class="card">
+<h3>AlphaOri Technologies</h3>
+<p>Cloud / Production Support Engineer (3 Years)</p>
+<ul>
+<li>AWS (EC2, S3, IAM, CloudWatch)</li>
+<li>Incident Management & RCA</li>
+<li>CI/CD (Ansible deployments)</li>
+<li>Monitoring & alerting</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Flextronics</h3>
+<p>IT Support Engineer (1 Year)</p>
+<ul>
+<li>Linux troubleshooting</li>
+<li>Nagios monitoring</li>
+<li>ServiceNow ITSM</li>
+</ul>
+</div>
 </div>
 </section>
+
+<!-- Skills -->
+<section id="skills" class="section">
+<h2 class="title">Skills</h2>
+<div class="skill">AWS<div class="bar"><span style="width:85%"></span></div></div>
+<div class="skill">Linux<div class="bar"><span style="width:90%"></span></div></div>
+<div class="skill">SQL<div class="bar"><span style="width:80%"></span></div></div>
+<div class="skill">Python<div class="bar"><span style="width:60%"></span></div></div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section">
+<h2 class="title">Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>AWS Monitoring & Alerting</h3>
+<p>Configured CloudWatch alarms and performed RCA on alerts.</p>
+</div>
+<div class="card">
+<h3>AWS Portfolio Website</h3>
+<p>Deployed website using GitHub and AWS.</p>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+<h2 class="title">Contact</h2>
+<p>Email: sindhuthirumalai26@gmail.com</p>
+<p>Phone: 9790935817</p>
+<p>Location: Chennai, India</p>
+</section>
+
+<div class="footer">© 2026 Sindhu | Portfolio</div>
 
 </body>
 </html>
