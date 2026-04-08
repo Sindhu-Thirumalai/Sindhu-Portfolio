@@ -3,91 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sindhu Portfolio</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+<title>Sindhu | Ultra Modern Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 body {
-  font-family: 'Poppins', sans-serif;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* Glass Navbar */
+.nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  backdrop-filter:blur(15px);
+  background:rgba(255,255,255,0.05);
+  display:flex;
+  justify-content:center;
+  padding:15px;
+  z-index:1000;
+}
+.nav a {
+  margin:0 20px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+.nav a:hover {color:#facc15;}
+
+/* Hero Section */
+.hero {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.hero h1 {
+  font-size:3rem;
+}
+.hero span {
+  color:#facc15;
+}
+.hero p {
+  max-width:600px;
+  opacity:0.8;
+}
+
+/* Sections */
+.section {
+  padding:80px 10%;
+}
+.title {
+  font-size:2rem;
+  margin-bottom:20px;
+  color:#facc15;
+}
+
+/* Cards */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card {
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:20px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-10px) scale(1.02);
+}
+
+/* Skills */
+.skill {
+  margin:15px 0;
+}
+.bar {
+  height:8px;
+  background:#1e293b;
+  border-radius:10px;
+  overflow:hidden;
+}
+.bar span {
+  display:block;
+  height:100%;
+  background:#facc15;
+}
+
+/* Footer */
+.footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.6;
+}
+
+/* Animations */
+.fade-in {
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+.fade-in.visible {
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
+<body>
 
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white">
+<div class="nav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+</div>
 
-<!-- NAV -->
-<header class="p-5 flex justify-between items-center shadow bg-white dark:bg-gray-900">
-  <h1 class="text-xl font-bold">Sindhu</h1>
-  <button onclick="toggleDark()">🌙</button>
-</header>
-
-<!-- HERO -->
-<section class="text-center py-20" data-aos="fade-up">
-  <h1 class="text-4xl font-bold mb-4">Hi, I'm Sindhu 👋</h1>
-  <p class="text-lg text-gray-600 dark:text-gray-400">
-    I enjoy learning, creating, and exploring new ideas.
-  </p>
+<section id="home" class="hero">
+  <h1>Hi, I'm <span>Sindhu</span></h1>
+  <p>Cloud & Production Support Engineer specializing in AWS, Linux & DevOps automation.</p>
 </section>
 
-<!-- ABOUT -->
-<section class="py-16 px-6 max-w-3xl mx-auto" data-aos="fade-up">
-  <h2 class="text-2xl font-bold mb-4">About Me</h2>
-  <p>
-    I’m Sindhu, a curious and creative individual who enjoys learning and improving step by step.
-    I love exploring technology and building small projects.
-  </p>
+<section id="about" class="section fade-in">
+  <h2 class="title">About Me</h2>
+  <p>4+ years of experience supporting AWS-based IoT and SaaS platforms with expertise in monitoring, incident management, and system reliability.</p>
 </section>
 
-<!-- SKILLS -->
-<section class="py-16 bg-gray-100 dark:bg-gray-800 text-center" data-aos="fade-up">
-  <h2 class="text-2xl font-bold mb-6">Skills</h2>
-  <div class="flex flex-wrap justify-center gap-4">
-    <span class="px-4 py-2 bg-white dark:bg-gray-700 rounded shadow">HTML</span>
-    <span class="px-4 py-2 bg-white dark:bg-gray-700 rounded shadow">CSS</span>
-    <span class="px-4 py-2 bg-white dark:bg-gray-700 rounded shadow">JavaScript</span>
-    <span class="px-4 py-2 bg-white dark:bg-gray-700 rounded shadow">Creativity</span>
+<section id="experience" class="section fade-in">
+  <h2 class="title">Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AlphaOri Technologies</h3>
+      <p>Cloud / Production Support Engineer</p>
+      <p>Handled AWS infra, CI/CD, incidents & RCA.</p>
+    </div>
+    <div class="card">
+      <h3>Flextronics</h3>
+      <p>IT Support Engineer</p>
+      <p>Linux monitoring & system troubleshooting.</p>
+    </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-  <h2 class="text-2xl font-bold mb-6">Projects</h2>
+<section id="skills" class="section fade-in">
+  <h2 class="title">Skills</h2>
 
-  <div class="bg-white dark:bg-gray-800 p-6 rounded shadow mb-4">
-    <h3 class="font-bold text-lg">Personal Portfolio</h3>
-    <p>This website showcases who I am and what I’m learning.</p>
+  <div class="skill">AWS
+    <div class="bar"><span style="width:85%"></span></div>
+  </div>
+
+  <div class="skill">Linux
+    <div class="bar"><span style="width:90%"></span></div>
+  </div>
+
+  <div class="skill">SQL
+    <div class="bar"><span style="width:80%"></span></div>
   </div>
 
 </section>
 
-<!-- LEARNING -->
-<section class="py-16 text-center bg-gray-100 dark:bg-gray-800" data-aos="fade-up">
-  <h2 class="text-2xl font-bold mb-4">Currently Learning</h2>
-  <p>Web Development, JavaScript, UI Design</p>
+<section id="projects" class="section fade-in">
+  <h2 class="title">Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AWS Monitoring</h3>
+      <p>CloudWatch alerts & RCA automation.</p>
+    </div>
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Hosted using AWS & GitHub.</p>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section class="py-16 text-center" data-aos="fade-up">
-  <h2 class="text-2xl font-bold mb-4">Contact</h2>
-  <p>Email: sindhu@email.com</p>
-</section>
-
-<!-- FOOTER -->
-<footer class="text-center py-6 bg-gray-200 dark:bg-gray-900">
-  <p>© 2026 Sindhu</p>
-</footer>
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<div class="footer">
+  © 2026 Sindhu | Built with ❤️
+</div>
 
 <script>
-AOS.init();
-
-// Dark mode
-function toggleDark() {
-  document.body.classList.toggle("dark");
-}
+const elements = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('visible');
+    }
+  });
+});
 </script>
 
 </body>
